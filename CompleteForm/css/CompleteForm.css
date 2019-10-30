@@ -1,0 +1,68 @@
+.divNone {
+    background-color:grey;
+    display: block;
+    float: left;
+    height: 25px;
+}
+
+.divRecommended {
+    background-color: dodgerblue;
+    display: block;
+    float: left;
+    height: 25px;
+}
+
+.divRequired {
+    background-color:tomato;
+    display: block;
+    float: left;
+    height: 25px;
+}
+
+.divAttributes {
+    width: auto;
+    height: auto;
+    display: block;
+    position: absolute;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+label {
+    font-family: 'Segoe UI';
+    text-align: right;
+    display: block;
+    color: black;
+    margin-right: 5px;
+}
+
+li {
+    font-family: 'Segoe UI';
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.labelDetail
+{
+    font-family: 'Segoe UI';
+    display: block;
+    text-align: left;
+    color: black;
+    font-size: 10px;
+    margin: 5px;
+    cursor: help;
+}
+
+button {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    border: none;
+    cursor: alias;
+    align-content: flex-end;
+    margin-right: 5px;
+}
+
+    button:hover {
+        background-color: whitesmoke;
+    }
