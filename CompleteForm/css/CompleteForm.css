@@ -3,6 +3,7 @@
     display: block;
     float: left;
     height: 25px;
+    cursor: help;
 }
 
 .divRecommended {
@@ -10,6 +11,7 @@
     display: block;
     float: left;
     height: 25px;
+    cursor: help;
 }
 
 .divRequired {
@@ -17,6 +19,7 @@
     display: block;
     float: left;
     height: 25px;
+    cursor: help;
 }
 
 .divAttributes {

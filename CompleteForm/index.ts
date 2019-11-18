@@ -79,7 +79,7 @@ export class CompleteForm implements ComponentFramework.StandardControl<IInputs,
 			{
 				this._noneLabel = document.createElement("label");
 				this._noneLabel.setAttribute("class","labelDetail");
-				this._noneLabel.addEventListener("click", this.GetNoneNullAttributes.bind(this));
+				//this._noneLabel.addEventListener("click", this.GetNoneNullAttributes.bind(this));
 				this._noneDiv.append(this._noneLabel);
 			}
 
@@ -90,7 +90,7 @@ export class CompleteForm implements ComponentFramework.StandardControl<IInputs,
 			{
 				this._recommendedLabel = document.createElement("label");
 				this._recommendedLabel.setAttribute("class","labelDetail");
-				this._recommendedLabel.addEventListener("click", this.GetRecommendedNullAttributes.bind(this));
+				//this._recommendedLabel.addEventListener("click", this.GetRecommendedNullAttributes.bind(this));
 				this._recommendedDiv.append(this._recommendedLabel);
 			}
 
@@ -101,7 +101,7 @@ export class CompleteForm implements ComponentFramework.StandardControl<IInputs,
 			{
 				this._requiredLabel = document.createElement("label");
 				this._requiredLabel.setAttribute("class","labelDetail");
-				this._requiredLabel.addEventListener("click", this.GetRequiredNullAttributes.bind(this));
+				//this._requiredLabel.addEventListener("click", this.GetRequiredNullAttributes.bind(this));
 				this._requiredDiv.append(this._requiredLabel);
 			}
 		}
@@ -123,15 +123,15 @@ export class CompleteForm implements ComponentFramework.StandardControl<IInputs,
 			return;
 
 		//% Completed
-		this._geralPercentLabel.innerText = ((this.GetNullAttributes() / this.GetAllAttributes()) * 100).toFixed(0).toString() + " % Completed";
+		this._geralPercentLabel.innerText = ((1 - (this.GetNullAttributes() / this.GetAllAttributes())) * 100).toFixed(0).toString() + " % Completed";
 
 		//x/y by Required Level
-		this._noneLabel.innerText = this._noneNotNulls.length + "/" + this.GetNones();
-		this._noneLabel.title = this._noneNotNulls.length + "/" + this.GetNones();
-		this._recommendedLabel.innerText = this._recommendedNotNulls.length + "/" + this.GetRecommendeds();
-		this._recommendedLabel.title = this._recommendedNotNulls.length + "/" + this.GetRecommendeds();
-		this._requiredLabel.innerText = this._requiredNotNulls.length + "/" + this.GetRequireds();
-		this._requiredLabel.title = this._requiredNotNulls.length + "/" + this.GetRequireds();
+		//this._noneLabel.innerText = this._noneNotNulls.length + "/" + this.GetNones();
+		this._noneDiv.title =  (this.GetNones() - this._noneNotNulls.length) + " null attribute(s)";
+		//this._recommendedLabel.innerText = this._recommendedNotNulls.length + "/" + this.GetRecommendeds();
+		this._recommendedDiv.title = (this.GetRecommendeds() - this._recommendedNotNulls.length) + " null attribute(s)";
+		//this._requiredLabel.innerText = this._requiredNotNulls.length + "/" + this.GetRequireds();
+		this._requiredDiv.title = (this.GetRequireds() - this._requiredNotNulls.length) + " null attribute(s)";
 
 		//% by Required Level
 		this._noneDiv.style.width = ((this.GetNones() / this.GetAllAttributes()) * 100).toString().replace(",",".") + "%";
